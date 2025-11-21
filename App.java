@@ -15,10 +15,23 @@ public class App {
 
                 case 1:
                     System.out.println("Digite seu nome:");
-                    String nome = scanner.nextLine();
+                    String nome = scanner.nextLine(); 
+                    String email = "";               
+
+                    while (true)
+                {
 
                     System.out.println("Digite seu email:");
-                    String email = scanner.nextLine();
+                    email = scanner.nextLine();
+                    if (email.contains("@"))
+                    {
+                    break;
+                    }
+                    else
+                    {
+                    System.out.println("Email incorreto, tente novamente!");
+                    }
+                }
 
                     Cliente cliente = new Cliente(nome, email);
                     Cliente.adicionarCliente(cliente);
